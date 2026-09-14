@@ -4,63 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreanoStore | Online Marketplace & Rewards</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
 </head>
-    
 <body>
 
-    <main class="store-container">
-        <header class="store-header">
-            <h1>CreanoStore</h1>
-            <p class="subtitle">minimal catalog</p>
-        </header>
-
-        <nav class="category-tabs">
-            <button class="tab-btn active" onclick="switchCategory('all', event)">all</button>
-            <button class="tab-btn" onclick="switchCategory('hardware', event)">hardware</button>
-            <button class="tab-btn" onclick="switchCategory('software', event)">software</button>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Creano<span>Store</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="cart-btn" class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
         </nav>
+    </header>
 
-        <section class="product-grid">
-            <article class="product-card" data-category="hardware">
-                <span class="item-id">01</span>
-                <div class="item-details">
-                    <h3>terminal keyboard</h3>
-                    <p class="price">$145.00</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Elevate Your Everyday Style</h2>
+            <p>Discover premium essentials crafted for modern living. Quality meets minimalism.</p>
+            <a href="#shop" class="btn-primary">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Shop / Product Section -->
+    <section id="shop" class="shop-section">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div id="product-grid" class="product-grid">
+                <!-- Products will be dynamically loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar / Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Shopping Cart</h3>
+                <button id="close-cart" class="close-btn">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items will appear here -->
+                 <p class="empty-cart-msg">Your cart is currently empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
                 </div>
-                <button class="action-btn" onclick="addToOrder('terminal keyboard', 145.00)">acquire</button>
-            </article>
+                <button id="checkout-btn" class="btn-primary checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
 
-            <article class="product-card" data-category="hardware">
-                <span class="item-id">02</span>
-                <div class="item-details">
-                    <h3>monochrome display</h3>
-                    <p class="price">$320.00</p>
-                </div>
-                <button class="action-btn" onclick="addToOrder('monochrome display', 320.00)">acquire</button>
-            </article>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>About CreanoStore</h2>
+                <p>Founded on the principles of minimalist design, durability, and elegance, CreanoStore curates products that seamlessly fit into your daily routine. We believe in high-grade craftsmanship without the clutter.</p>
+            </div>
+        </div>
+    </section>
 
-            <article class="product-card" data-category="software">
-                <span class="item-id">03</span>
-                <div class="item-details">
-                    <h3>compiler license</h3>
-                    <p class="price">$80.00</p>
-                </div>
-                <button class="action-btn" onclick="addToOrder('compiler license', 80.00)">acquire</button>
-            </article>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <p>&copy; 2026 CreanoStore. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
 
-            <article class="product-card" data-category="software">
-                <span class="item-id">04</span>
-                <div class="item-details">
-                    <h3>text editor plugin</h3>
-                    <p class="price">$25.00</p>
-                </div>
-                <button class="action-btn" onclick="addToOrder('text editor plugin', 25.00)">acquire</button>
-            </article>
-        </section>
-    </main>
-
+    <!-- Link JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
+
