@@ -7,43 +7,60 @@
     <link rel="stylesheet" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
 </head>
-<body>
-<main class="store-container">
-    <div class="category-tabs">
-        <button class="tab-btn active" onclick="switchCategory('all')">all</button>
-        <button class="tab-btn" onclick="switchCategory('hardware')">hardware</button>
-        <button class="tab-btn" onclick="switchCategory('software')">software</button>
-    </div>
-
-    <div class="product-grid">
-        <article class="product-card" data-category="hardware">
-            <span class="item-id">01</span>
-            <h3>terminal keyboard</h3>
-            <p class="price">$145.00</p>
-            <button class="action-btn" onclick="addToOrder('terminal keyboard', 145.00)">acquire</button>
-        </article>
-
-        <article class="product-card" data-category="hardware">
-            <span class="item-id">02</span>
-            <h3>monochrome display</h3>
-            <p class="price">$320.00</p>
-            <button class="action-btn" onclick="addToOrder('monochrome display', 320.00)">acquire</button>
-        </article>
-
-        <article class="product-card" data-category="software">
-            <span class="item-id">03</span>
-            <h3>compiler license</h3>
-            <p class="price">$80.00</p>
-            <button class="action-btn" onclick="addToOrder('compiler license', 80.00)">acquire</button>
-        </article>
-
-        <article class="product-card" data-category="software">
-            <span class="item-id">04</span>
-            <h3>text editor plugin</h3>
-            <p class="price">$25.00</p>
-            <button class="action-btn" onclick="addToOrder('text editor plugin', 25.00)">acquire</button>
-        </article>
-    </div>
-</main>
     
+<body>
+
+    <main class="store-container">
+        <header class="store-header">
+            <h1>CreanoStore</h1>
+            <p class="subtitle">minimal catalog</p>
+        </header>
+
+        <nav class="category-tabs">
+            <button class="tab-btn active" onclick="switchCategory('all', event)">all</button>
+            <button class="tab-btn" onclick="switchCategory('hardware', event)">hardware</button>
+            <button class="tab-btn" onclick="switchCategory('software', event)">software</button>
+        </nav>
+
+        <section class="product-grid">
+            <article class="product-card" data-category="hardware">
+                <span class="item-id">01</span>
+                <div class="item-details">
+                    <h3>terminal keyboard</h3>
+                    <p class="price">$145.00</p>
+                </div>
+                <button class="action-btn" onclick="addToOrder('terminal keyboard', 145.00)">acquire</button>
+            </article>
+
+            <article class="product-card" data-category="hardware">
+                <span class="item-id">02</span>
+                <div class="item-details">
+                    <h3>monochrome display</h3>
+                    <p class="price">$320.00</p>
+                </div>
+                <button class="action-btn" onclick="addToOrder('monochrome display', 320.00)">acquire</button>
+            </article>
+
+            <article class="product-card" data-category="software">
+                <span class="item-id">03</span>
+                <div class="item-details">
+                    <h3>compiler license</h3>
+                    <p class="price">$80.00</p>
+                </div>
+                <button class="action-btn" onclick="addToOrder('compiler license', 80.00)">acquire</button>
+            </article>
+
+            <article class="product-card" data-category="software">
+                <span class="item-id">04</span>
+                <div class="item-details">
+                    <h3>text editor plugin</h3>
+                    <p class="price">$25.00</p>
+                </div>
+                <button class="action-btn" onclick="addToOrder('text editor plugin', 25.00)">acquire</button>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
