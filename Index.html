@@ -3,173 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreanoStore — Digital Assets & Design Resources</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
+    <title>CreanoStore | Curated Directory</title>
+    <link rel="stylesheet" href="Style.css"
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header class="site-header">
-        <div class="top-announcement">
-            <p>Instant Access Worldwide — Download High-Res Assets & Code Immediately After Purchase</p>
-        </div>
-        <nav class="navbar wrapper">
-            <a href="#" class="brand-logo">Creano<span>Store</span></a>
-            <ul class="nav-links">
-                <li><a href="#shop" class="active">Digital Catalog</a></li>
-                <li><a href="#features">Licenses</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Support</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button id="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button id="cart-btn" aria-label="Shopping Cart">
-                    <i class="fa-solid fa-cloud-arrow-down"></i>
-                    <span id="cart-count">0</span>
-                </button>
-                <button id="mobile-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
-            </div>
+    <main class="store-container">
+        <header class="store-header">
+            <h1>CreanoStore</h1>
+            <p class="subtitle">curated partner directory</p>
+        </header>
+
+        <nav class="category-tabs">
+            <button class="tab-btn active" onclick="switchCategory('all', event)">all</button>
+            <button class="tab-btn" onclick="switchCategory('hardware', event)">hardware</button>
+            <button class="tab-btn" onclick="switchCategory('software', event)">software</button>
         </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content wrapper">
-                <span class="badge">Digital-First Creation</span>
-                <h1>Professional Assets for Modern Creators</h1>
-                <p>High-quality UI kits, code boilerplates, vector graphics, and digital masterclasses designed to accelerate your creative workflow.</p>
-                <div class="hero-cta">
-                    <a href="#shop" class="btn btn-primary">Browse Assets</a>
-                    <a href="#features" class="btn btn-secondary">License Details</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Value Proposition Section (Digital focused) -->
-        <section class="features-bar wrapper">
-            <div class="feature-item">
-                <i class="fa-solid fa-bolt"></i>
-                <div>
-                    <h3>Instant Delivery</h3>
-                    <p>Download directly to your dashboard.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-file-shield"></i>
-                <div>
-                    <h3>Commercial License</h3>
-                    <p>Use safely in client & personal work.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-arrows-rotate"></i>
-                <div>
-                    <h3>Lifetime Updates</h3>
-                    <p>Get all future version patches free.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-headset"></i>
-                <div>
-                    <h3>Creator Support</h3>
-                    <p>Direct help from experienced devs.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Catalog Section -->
-        <section id="shop" class="product-section wrapper">
-            <div class="section-header">
-                <h2>Digital Library</h2>
-                <div class="filter-tabs">
-                    <button class="filter-btn active" data-filter="all">All Items</button>
-                    <button class="filter-btn" data-filter="ui-kits">UI Kits & Design</button>
-                    <button class="filter-btn" data-filter="code">Code & Templates</button>
-                    <button class="filter-btn" data-filter="audio">Audio & SFX</button>
-                </div>
-            </div>
-
-            <!-- Dynamic Product Grid -->
-            <div class="product-grid" id="product-grid">
-                <!-- Products injected via JS -->
-            </div>
-        </section>
-
-        <!-- Newsletter Section -->
-        <section class="newsletter-section">
-            <div class="wrapper newsletter-container">
-                <h2>Free Weekly Assets</h2>
-                <p>Join 45,000+ creators receiving our hand-picked weekly freebies and design tips.</p>
-                <form id="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-primary">Get Freebies</button>
-                </form>
-            </div>
+        <section id="product-grid" class="product-grid">
+            <!-- Products are injected dynamically from script.js for easy mobile updates -->
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="wrapper footer-grid">
-            <div class="footer-col">
-                <a href="#" class="brand-logo">Creano<span>Store</span></a>
-                <p>Empowering digital creators with premium tools, code, and resources.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Marketplace</h4>
-                <ul>
-                    <li><a href="#shop">All Resources</a></li>
-                    <li><a href="#shop">UI Elements</a></li>
-                    <li><a href="#shop">Boilerplates</a></li>
-                    <li><a href="#shop">Bundles</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal & Licencing</h4>
-                <ul>
-                    <li><a href="#">Standard License</a></li>
-                    <li><a href="#">Extended License</a></li>
-                    <li><a href="#">Refund Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Community</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-discord"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom wrapper">
-            <p>&copy; 2026 CreanoStore Inc. All digital rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Slide-out Cart Drawer -->
-    <div class="cart-drawer" id="cart-drawer">
-        <div class="cart-header">
-            <h3>Your Download Cart</h3>
-            <button id="close-cart" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="cart-body" id="cart-items">
-            <p class="empty-cart-msg">Your download queue is empty.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-subtotal">
-                <span>Total:</span>
-                <span id="cart-subtotal-price">$0.00</span>
-            </div>
-            <button class="btn btn-primary checkout-btn" id="checkout-btn">Proceed to Secure Checkout</button>
-        </div>
-    </div>
-    <div class="overlay" id="overlay"></div>
 
     <script src="script.js"></script>
 </body>
