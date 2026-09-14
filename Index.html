@@ -3,97 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreanoStore | Online Marketplace & Rewards</title>
-    <link rel="stylesheet" href="Style.css">
+    <title>CreanoStore — Curated Modern Living</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts & FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <!-- Header / Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>Creano<span>Store</span></h1>
-            </div>
+    <header class="site-header">
+        <div class="top-announcement">
+            <p>Enjoy Free Express Shipping on Orders Over $75 — Shop Now</p>
+        </div>
+        <nav class="navbar wrapper">
+            <a href="#" class="brand-logo">Creano<span>Store</span></a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#shop">Shop</a></li>
+                <li><a href="#shop" class="active">Shop</a></li>
+                <li><a href="#features">Collections</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button id="cart-btn" class="cart-btn">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                <button id="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="cart-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
                     <span id="cart-count">0</span>
                 </button>
+                <button id="mobile-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Elevate Your Everyday Style</h2>
-            <p>Discover premium essentials crafted for modern living. Quality meets minimalism.</p>
-            <a href="#shop" class="btn-primary">Explore Collection</a>
-        </div>
-    </section>
-
-    <!-- Shop / Product Section -->
-    <section id="shop" class="shop-section">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div id="product-grid" class="product-grid">
-                <!-- Products will be dynamically loaded via JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Shopping Cart Sidebar / Modal -->
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h3>Your Shopping Cart</h3>
-                <button id="close-cart" class="close-btn">&times;</button>
-            </div>
-            <div id="cart-items" class="cart-items">
-                <!-- Cart items will appear here -->
-                 <p class="empty-cart-msg">Your cart is currently empty.</p>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span id="cart-total-price">$0.00</span>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content wrapper">
+                <span class="badge">New Arrival 2026</span>
+                <h1>Crafted for Modern Living & Design</h1>
+                <p>Discover thoughtfully designed everyday objects that blend pristine aesthetics with uncompromising functionality.</p>
+                <div class="hero-cta">
+                    <a href="#shop" class="btn btn-primary">Explore Collection</a>
+                    <a href="#about" class="btn btn-secondary">Our Philosophy</a>
                 </div>
-                <button id="checkout-btn" class="btn-primary checkout-btn">Proceed to Checkout</button>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <div class="about-text">
-                <h2>About CreanoStore</h2>
-                <p>Founded on the principles of minimalist design, durability, and elegance, CreanoStore curates products that seamlessly fit into your daily routine. We believe in high-grade craftsmanship without the clutter.</p>
+        <!-- Value Proposition Section -->
+        <section class="features-bar wrapper">
+            <div class="feature-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <h3>Global Shipping</h3>
+                    <p>Fast, reliable delivery worldwide.</p>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="feature-item">
+                <i class="fa-solid fa-rotate-left"></i>
+                <div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day hassle-free return policy.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <h3>Secure Checkout</h3>
+                    <p>Protected by end-to-end encryption.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated team ready to assist.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Catalog Section -->
+        <section id="shop" class="product-section wrapper">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+                    <button class="filter-btn" data-filter="tech">Tech & Audio</button>
+                    <button class="filter-btn" data-filter="home">Home Decor</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div class="product-grid" id="product-grid">
+                <!-- Products injected via JS -->
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="wrapper newsletter-container">
+                <h2>Join the Creano Club</h2>
+                <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container footer-content">
-            <p>&copy; 2026 CreanoStore. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <footer class="site-footer">
+        <div class="wrapper footer-grid">
+            <div class="footer-col">
+                <a href="#" class="brand-logo">Creano<span>Store</span></a>
+                <p>Redefining modern retail through exceptional craftsmanship and conscious curation.</p>
             </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#shop">Shop All</a></li>
+                    <li><a href="#features">Collections</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom wrapper">
+            <p>&copy; 2026 CreanoStore Inc. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Link JavaScript -->
+    <!-- Slide-out Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Bag</h3>
+            <button id="close-cart" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cart-items">
+            <!-- Cart items injected via JS -->
+            <p class="empty-cart-msg">Your bag is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal-price">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- JavaScript Link -->
     <script src="script.js"></script>
 </body>
-</html>
-
+                    </html>
+                    
