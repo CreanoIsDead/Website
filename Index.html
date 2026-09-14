@@ -3,29 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreanoStore | Curated Directory</title>
-    <link rel="stylesheet" href="Style.css"
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
+    <title>CreanoStore</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* Grid for Affiliate Products */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .card p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #27ae60;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #219653;
+        }
+
+        .btn-contact {
+            background-color: #2980b9;
+        }
+
+        .btn-contact:hover {
+            background-color: #2471a3;
+        }
+
+        /* Digital Item Special Styling */
+        .digital-item-card {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid #2980b9;
+            background-color: #f0f8ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #ffffff;
+            margin-top: auto;
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <main class="store-container">
-        <header class="store-header">
-            <h1>CreanoStore</h1>
-            <p class="subtitle">curated partner directory</p>
-        </header>
+    <header>
+        <h1>CreanoStore</h1>
+        <p>Curated products & exclusive digital downloads</p>
+    </header>
 
-        <nav class="category-tabs">
-            <button class="tab-btn active" onclick="switchCategory('all', event)">all</button>
-            <button class="tab-btn" onclick="switchCategory('hardware', event)">hardware</button>
-            <button class="tab-btn" onclick="switchCategory('software', event)">software</button>
-        </nav>
+    <div class="container">
+        
+        <!-- Affiliate Products Section -->
+        <section>
+            <h2>Recommended Products</h2>
+            <div class="product-grid">
+                
+                <!-- Product 1 -->
+                <div class="card">
+                    <h3>Awesome Gadget</h3>
+                    <p>This is a great product that you will love. Highly recommended for daily use.</p>
+                    <!-- Replace the href below with your actual affiliate link -->
+                    <a href="YOUR_AFFILIATE_LINK_1" target="_blank" class="btn">View on Amazon</a>
+                </div>
 
-        <section id="product-grid" class="product-grid">
-            <!-- Products are injected dynamically from script.js for easy mobile updates -->
+                <!-- Product 2 -->
+                <div class="card">
+                    <h3>Productivity Tool</h3>
+                    <p>Boost your workflow with this amazing tool. Check out the features.</p>
+                    <!-- Replace the href below with your actual affiliate link -->
+                    <a href="YOUR_AFFILIATE_LINK_2" target="_blank" class="btn">Get it Now</a>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="card">
+                    <h3>Lifestyle Accessory</h3>
+                    <p>Enhance your daily routine with this premium lifestyle item.</p>
+                    <!-- Replace the href below with your actual affiliate link -->
+                    <a href="YOUR_AFFILIATE_LINK_3" target="_blank" class="btn">Shop Here</a>
+                </div>
+
+            </div>
         </section>
-    </main>
 
-    <script src="script.js"></script>
+        <!-- Digital Item Section -->
+        <section>
+            <h2>Exclusive Digital Item</h2>
+            <div class="card digital-item-card">
+                <h3>Premium Digital Guide / Course</h3>
+                <p>Unlock the secrets to success with my exclusive digital product. This package includes comprehensive guides, templates, and one-on-one email support.</p>
+                <p><strong>Price: $XX.XX</strong></p>
+                
+                <!-- The 'mailto:' link opens the user's default email client -->
+                <!-- Replace 'your.email@example.com' with your actual email address -->
+                <a href="mailto:your.email@example.com?subject=Purchase%20Inquiry:%20Premium%20Digital%20Guide" class="btn btn-contact">Email to Purchase</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 CreanoStore. All rights reserved.</p>
+        <script> src="script.js" </script>
+    </footer>
+
 </body>
 </html>
