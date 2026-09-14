@@ -5,84 +5,108 @@
 }
 
 body {
-    background-color: #ffffff;
-    color: #000000;
-    font-family: monospace, monospace;
+    background-color: #fcfcfc;
+    color: #111111;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
     font-size: 14px;
-    line-height: 1.5;
-    padding: 40px 20px;
+    line-height: 1.6;
+    padding: 60px 20px;
 }
 
 .store-container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
+}
+
+.store-header {
+    margin-bottom: 30px;
+}
+
+.store-header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: #666666;
+    font-size: 13px;
 }
 
 .category-tabs {
     display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #000000;
-    padding-bottom: 10px;
+    gap: 16px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 12px;
 }
 
 .tab-btn {
     background: none;
     border: none;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
-    color: #666666;
+    color: #888888;
     text-transform: lowercase;
     padding: 0;
 }
 
 .tab-btn.active, .tab-btn:hover {
-    color: #000000;
-    text-decoration: underline;
+    color: #111111;
+    font-weight: 500;
 }
 
 .product-grid {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .product-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #f0f0f0;
     padding-bottom: 16px;
 }
 
 .item-id {
-    color: #999999;
+    color: #bbbbbb;
     font-size: 12px;
-    margin-right: 15px;
+    width: 30px;
+}
+
+.item-details {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
 }
 
 .product-card h3 {
     font-size: 14px;
-    font-weight: normal;
-    flex-grow: 1;
+    font-weight: 400;
+    color: #222222;
     text-transform: lowercase;
 }
 
 .price {
-    margin-right: 20px;
-    font-size: 14px;
+    color: #555555;
+    font-size: 13px;
 }
 
 .action-btn {
-    background: #000000;
+    background: #111111;
     color: #ffffff;
     border: none;
-    padding: 6px 12px;
+    padding: 6px 14px;
     font-family: inherit;
     font-size: 12px;
     cursor: pointer;
     text-transform: lowercase;
+    border-radius: 4px;
 }
 
 .action-btn:hover {
