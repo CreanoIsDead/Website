@@ -1,46 +1,46 @@
-// --- Mock Product Database ---
+// --- Digital Product Database ---
 const products = [
     {
         id: 1,
-        title: "Minimalist Ceramic Lamp",
-        category: "home",
-        price: 120.00,
-        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80"
+        title: "SaaS Dashboard UI Kit",
+        category: "ui-kits",
+        price: 49.00,
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 2,
-        title: "Acoustic Wood Headphones",
-        category: "tech",
-        price: 249.00,
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
+        title: "Next.js Fullstack Boilerplate",
+        category: "code",
+        price: 89.00,
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 3,
-        title: "Signature Chronograph Watch",
-        category: "lifestyle",
-        price: 185.00,
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+        title: "Ambient UI Sound Effects Pack",
+        category: "audio",
+        price: 24.00,
+        image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 4,
-        title: "Handcrafted Ceramic Mug",
-        category: "home",
-        price: 32.00,
-        image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+        title: "Mobile App Wireframe System",
+        category: "ui-kits",
+        price: 35.00,
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 5,
-        title: "Wireless Aluminum Speaker",
-        category: "tech",
-        price: 145.00,
-        image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80"
+        title: "Tailwind CSS Component Library",
+        category: "code",
+        price: 59.00,
+        image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 6,
-        title: "Minimalist Leather Backpack",
-        category: "lifestyle",
-        price: 210.00,
-        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+        title: "Minimalist Vector Icon Set",
+        category: "ui-kits",
+        price: 19.00,
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
     }
 ];
 
@@ -70,7 +70,7 @@ function renderProducts(items) {
     productGrid.innerHTML = '';
     
     if(items.length === 0) {
-        productGrid.innerHTML = `<p>No products found in this category.</p>`;
+        productGrid.innerHTML = `<p>No digital assets found in this category.</p>`;
         return;
     }
 
@@ -88,7 +88,7 @@ function renderProducts(items) {
                 </div>
                 <div class="product-footer">
                     <span class="product-price">$${product.price.toFixed(2)}</span>
-                    <button class="add-to-cart-btn" data-id="${product.id}">+ Add</button>
+                    <button class="add-to-cart-btn" data-id="${product.id}">+ Add Asset</button>
                 </div>
             </div>
         `;
@@ -98,7 +98,6 @@ function renderProducts(items) {
 
 // --- Event Listeners Setup ---
 function setupEventListeners() {
-    // Filter Category Tabs
     filterBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             filterBtns.forEach(b => b.classList.remove('active'));
@@ -114,7 +113,6 @@ function setupEventListeners() {
         });
     });
 
-    // Add to Cart Delegation
     productGrid.addEventListener('click', (e) => {
         if(e.target.classList.contains('add-to-cart-btn')) {
             const productId = parseInt(e.target.getAttribute('data-id'));
@@ -122,12 +120,10 @@ function setupEventListeners() {
         }
     });
 
-    // Toggle Cart Drawer
     cartBtn.addEventListener('click', toggleCart);
     closeCartBtn.addEventListener('click', toggleCart);
     overlay.addEventListener('click', toggleCart);
 
-    // Cart Management Delegation
     cartItemsContainer.addEventListener('click', (e) => {
         const id = parseInt(e.target.getAttribute('data-id'));
         if(e.target.classList.contains('increase-qty')) {
@@ -139,10 +135,9 @@ function setupEventListeners() {
         }
     });
 
-    // Newsletter Submission
     newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Thank you for joining the Creano Club!');
+        alert('Success! Check your inbox for your first free digital asset bundle.');
         newsletterForm.reset();
     });
 }
@@ -164,7 +159,6 @@ function addToCart(productId) {
     }
 
     updateCartUI();
-    // Automatically slide out drawer when adding item for modern UX
     if(!cartDrawer.classList.contains('open')) {
         toggleCart();
     }
@@ -188,13 +182,11 @@ function removeFromCart(productId) {
 }
 
 function updateCartUI() {
-    // Update Badge Count
     const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalCount;
 
-    // Render Cart Items
     if(cart.length === 0) {
-        cartItemsContainer.innerHTML = `<p class="empty-cart-msg">Your bag is currently empty.</p>`;
+        cartItemsContainer.innerHTML = `<p class="empty-cart-msg">Your download queue is empty.</p>`;
         cartSubtotalPrice.textContent = '$0.00';
         return;
     }
@@ -223,5 +215,4 @@ function updateCartUI() {
     });
 
     cartSubtotalPrice.textContent = `$${subtotal.toFixed(2)}`;
-            }
-                        
+                           }
