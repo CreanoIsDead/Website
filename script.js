@@ -1,4 +1,4 @@
-function switchCategory(category) {
+function switchCategory(category, event) {
     const cards = document.querySelectorAll('.product-card');
     const buttons = document.querySelectorAll('.tab-btn');
 
