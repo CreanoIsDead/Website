@@ -3,35 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Portfolio</title>
-    <!-- Link to the external CSS file -->
+    <title>CreanoStore | Online Marketplace & Rewards</title>
     <link rel="stylesheet" href="style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092284334287864" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Professional Navigation Bar -->
     <header>
         <nav class="navbar">
-            <a href="#" class="logo">Portfolio<span>.</span></a>
+            <a href="#home" class="logo">Creano<span>Store</span></a>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#rewards">Creano Rewards</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero / Home Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Building The Future, <br>One Line of Code At A Time.</h1>
-            <p>Welcome to my official website. Built completely from a smartphone, hosted on the cloud, and designed to perform.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn primary-btn">Get in Touch</a>
-                <a href="#services" class="btn secondary-btn">Explore Services</a>
+            <h1>Shop Smart. Earn <span class="highlight">Creano Coins</span>.</h1>
+            <p>Explore our multi-category storefront, watch ads to build your coin balance, and unlock real discounts on products instantly!</p>
+            <div class="coin-badge-hero">
+                💰 Your Balance: <span id="user-coins">50</span> Creano Coins
+            </div>
+            <a href="#shop" class="btn primary-btn">Start Shopping</a>
+        </div>
+    </section>
+
+    <!-- AdSense Header Slot Placeholder -->
+    <div class="ad-container">
+        <!-- Paste your AdSense script code here -->
+        <p class="ad-placeholder">[ Advertisement Banner Spot ]</p>
+    </div>
+
+    <!-- Main Shop Section with Category Switching Tabs -->
+    <section id="shop" class="section">
+        <div class="container">
+            <h2>Our Marketplace</h2>
+            <p class="section-subtitle">Switch between categories to find what you need</p>
+
+            <!-- Category Switcher Tabs -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchCategory('digital')">💻 Digital Products</button>
+                <button class="tab-btn" onclick="switchCategory('gadgets')">⚡ Tech Gadgets</button>
+            </div>
+
+            <!-- Category Content: Digital Products -->
+            <div id="digital-section" class="product-grid category-content active">
+                <div class="product-card">
+                    <div class="product-image">📂</div>
+                    <h3>Pro Developer Pack</h3>
+                    <p class="price" data-base="29.99">$29.99 <span class="coin-discount-tag">(Use Coins for 10% off)</span></p>
+                    <p class="product-desc">High performance code templates built for web creators.</p>
+                    <button class="btn primary-btn" onclick="buyItem('Pro Developer Pack', 29.99)">Buy with Discount</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🎨</div>
+                    <h3>UI/UX Design Assets</h3>
+                    <p class="price" data-base="15.00">$15.00 <span class="coin-discount-tag">(Use Coins for 10% off)</span></p>
+                    <p class="product-desc">Modern components kit for mobile and desktop screens.</p>
+                    <button class="btn primary-btn" onclick="buyItem('UI/UX Design Assets', 15.00)">Buy with Discount</button>
+                </div>
+            </div>
+
+            <!-- Category Content: Tech Gadgets -->
+            <div id="gadgets-section" class="product-grid category-content" style="display: none;">
+                <div class="product-card">
+                    <div class="product-image">🎧</div>
+                    <h3>Wireless Earbuds</h3>
+                    <p class="price" data-base="59.99">$59.99 <span class="coin-discount-tag">(Use Coins for 10% off)</span></p>
+                    <p class="product-desc">Crystal clear sound quality with active noise cancellation.</p>
+                    <button class="btn primary-btn" onclick="buyItem('Wireless Earbuds', 59.99)">Buy with Discount</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">⌚</div>
+                    <h3>Smart Fitness Watch</h3>
+                    <p class="price" data-base="89.99">$89.99 <span class="coin-discount-tag">(Use Coins for 10% off)</span></p>
+                    <p class="product-desc">Track your health metrics seamlessly on the go.</p>
+                    <button class="btn primary-btn" onclick="buyItem('Smart Fitness Watch', 89.99)">Buy with Discount</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creano Coins Rewards Section -->
+    <section id="rewards" class="section alt-bg">
+        <div class="container">
+            <h2>The Creano Coin Vault</h2>
+            <p class="section-subtitle">Watch simulated sponsored ads to stack up coins and save money</p>
+            <div class="rewards-card">
+                <h3>Current Balance: <span id="vault-coins">50</span> Creano Coins</h3>
+                <p>Every ad watched grants you <strong>+25 Creano Coins</strong>, which can be applied instantly toward product checkout discounts.</p>
+                <button class="btn accent-btn" onclick="watchAdForCoins()">📺 Watch Ad & Earn 25 Coins</button>
             </div>
         </div>
     </section>
@@ -39,52 +114,31 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2>About Me</h2>
-            <p class="section-subtitle">Who am I and what do I do?</p>
+            <h2>About CreanoStore</h2>
+            <p class="section-subtitle">Built dynamically for maximum user engagement</p>
             <div class="about-card">
-                <p>I am a passionate creator building a digital footprint from the mobile cloud. This entire website was created, formatted, and deployed without ever opening a laptop. Stay tuned for more projects!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section alt-bg">
-        <div class="container">
-            <h2>My Services</h2>
-            <p class="section-subtitle">What I can offer you</p>
-            <div class="services-grid">
-                <div class="service-box">
-                    <h3>Web Design</h3>
-                    <p>Clean, mobile-responsive layouts tailored to look great on any device, big or small.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Cloud Hosting</h3>
-                    <p>Fast, reliable, and completely free deployment strategies using cutting-edge tools.</p>
-                </div>
-                <div class="service-box">
-                    <h3>Content Strategy</h3>
-                    <p>Building optimized spaces ready for monetization, blogging, and audience growth.</p>
-                </div>
+                <p>We combine clean modern design, mobile optimization, built-in rewards systems, and lightning-fast cloud delivery. Shop with confidence and leverage your interactive rewards balance.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section alt-bg">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="section-subtitle">Have a question or want to work together?</p>
+            <h2>Customer Support</h2>
+            <p class="section-subtitle">Need assistance with your orders or coins?</p>
             <div class="contact-card">
-                <p>Drop me an email directly and let's start a conversation.</p>
-                <a href="mailto:your-email@example.com" class="btn primary-btn">Send Email</a>
+                <p>Send us a message directly via email and our support team will get back to you.</p>
+                <a href="mailto:support@example.com" class="btn secondary-btn">Contact Support</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved. Hosted for free via Netlify.</p>
+        <p>&copy; 2026 CreanoStore. All rights reserved. Powered by Netlify & GitHub.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
