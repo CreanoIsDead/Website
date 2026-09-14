@@ -3,66 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .card {
-            background-color: #1e293b;
-            border-radius: 16px;
-            padding: 40px 30px;
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            border: 1px solid #334155;
-        }
-        h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: #38bdf8;
-        }
-        p {
-            color: #94a3b8;
-            margin-bottom: 30px;
-            font-size: 15px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #38bdf8;
-            color: #0f172a;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .btn:hover {
-            background-color: #0ea5e9;
-        }
-    </style>
+    <title>My Professional Portfolio</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="card">
-        <h1>Welcome to My Site</h1>
-        <p>This website was built entirely from a smartphone and is hosted for free in the cloud using Netlify and GitHub.</p>
-        <a href="#" class="btn">Get in Touch</a>
-    </div>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Portfolio<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero / Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Building The Future, <br>One Line of Code At A Time.</h1>
+            <p>Welcome to my official website. Built completely from a smartphone, hosted on the cloud, and designed to perform.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn primary-btn">Get in Touch</a>
+                <a href="#services" class="btn secondary-btn">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="section-subtitle">Who am I and what do I do?</p>
+            <div class="about-card">
+                <p>I am a passionate creator building a digital footprint from the mobile cloud. This entire website was created, formatted, and deployed without ever opening a laptop. Stay tuned for more projects!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section alt-bg">
+        <div class="container">
+            <h2>My Services</h2>
+            <p class="section-subtitle">What I can offer you</p>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3>Web Design</h3>
+                    <p>Clean, mobile-responsive layouts tailored to look great on any device, big or small.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Cloud Hosting</h3>
+                    <p>Fast, reliable, and completely free deployment strategies using cutting-edge tools.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Content Strategy</h3>
+                    <p>Building optimized spaces ready for monetization, blogging, and audience growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Have a question or want to work together?</p>
+            <div class="contact-card">
+                <p>Drop me an email directly and let's start a conversation.</p>
+                <a href="mailto:your-email@example.com" class="btn primary-btn">Send Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved. Hosted for free via Netlify.</p>
+    </footer>
 
 </body>
 </html>
