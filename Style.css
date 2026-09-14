@@ -1,4 +1,3 @@
-/* --- CSS Reset & Variables --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +5,12 @@
 }
 
 :root {
-    --primary: #111111;
-    --accent: #d4af37;
-    --bg-light: #f9f9f9;
-    --text-main: #222222;
-    --text-muted: #666666;
-    --border-color: #e5e5e5;
+    --primary: #0f172a;
+    --accent: #6366f1;
+    --bg-light: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
     --white: #ffffff;
     --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     --font-main: 'Plus Jakarta Sans', sans-serif;
@@ -51,41 +50,41 @@ button {
     font-family: inherit;
 }
 
-/* --- Buttons & Badges --- */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
     font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 6px;
     transition: var(--transition);
 }
 
 .btn-primary {
-    background-color: var(--primary);
+    background-color: var(--accent);
     color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent);
+    background-color: #4f46e5;
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--primary);
-    border: 1px solid var(--primary);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
 }
 
 .badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: rgba(212, 175, 55, 0.15);
-    color: var(--accent);
+    background-color: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -94,7 +93,7 @@ button {
     margin-bottom: 1rem;
 }
 
-/* --- Header / Nav --- */
+/* Header & Navbar */
 .site-header {
     position: sticky;
     top: 0;
@@ -123,6 +122,7 @@ button {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    color: var(--primary);
 }
 
 .brand-logo span {
@@ -182,14 +182,13 @@ button {
     display: none;
 }
 
-/* --- Hero Section --- */
+/* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     height: 75vh;
     display: flex;
     align-items: center;
     color: var(--white);
-    text-align: left;
 }
 
 .hero-content {
@@ -207,7 +206,7 @@ button {
 .hero-content p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #e0e0e0;
+    color: #94a3b8;
 }
 
 .hero-cta {
@@ -215,22 +214,12 @@ button {
     gap: 1rem;
 }
 
-.hero-cta .btn-secondary {
-    color: var(--white);
-    border-color: var(--white);
-}
-
-.hero-cta .btn-secondary:hover {
-    background-color: var(--white);
-    color: var(--primary);
-}
-
-/* --- Features Bar --- */
+/* Features Bar */
 .features-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -241,14 +230,14 @@ button {
 }
 
 .feature-item i {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--accent);
 }
 
 .feature-item h3 {
     font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .feature-item p {
@@ -256,7 +245,7 @@ button {
     color: var(--text-muted);
 }
 
-/* --- Product Section --- */
+/* Product Section */
 .product-section {
     padding: 5rem 2rem;
 }
@@ -281,7 +270,7 @@ button {
     gap: 0.5rem;
     background: var(--bg-light);
     padding: 0.4rem;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .filter-btn {
@@ -289,7 +278,7 @@ button {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-muted);
-    border-radius: 4px;
+    border-radius: 6px;
     transition: var(--transition);
 }
 
@@ -307,7 +296,7 @@ button {
 
 .product-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     transition: var(--transition);
     border: 1px solid var(--border-color);
@@ -317,12 +306,12 @@ button {
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .product-image {
     position: relative;
-    height: 320px;
+    height: 220px;
     background-color: var(--bg-light);
     overflow: hidden;
 }
@@ -349,8 +338,8 @@ button {
 .product-category {
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: var(--text-muted);
-    font-weight: 600;
+    color: var(--accent);
+    font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 0.4rem;
 }
@@ -379,7 +368,7 @@ button {
     color: var(--white);
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: 600;
     transition: var(--transition);
 }
@@ -388,7 +377,7 @@ button {
     background-color: var(--accent);
 }
 
-/* --- Newsletter Section --- */
+/* Newsletter */
 .newsletter-section {
     background-color: var(--bg-light);
     padding: 5rem 2rem;
@@ -420,17 +409,17 @@ button {
     flex-grow: 1;
     padding: 0.8rem 1.2rem;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: inherit;
     outline: none;
     transition: var(--transition);
 }
 
 #newsletter-form input:focus {
-    border-color: var(--primary);
+    border-color: var(--accent);
 }
 
-/* --- Footer --- */
+/* Footer */
 .site-footer {
     background-color: var(--primary);
     color: var(--white);
@@ -451,7 +440,7 @@ button {
 }
 
 .footer-col p {
-    color: #aaaaaa;
+    color: #94a3b8;
     font-size: 0.9rem;
     max-width: 300px;
 }
@@ -467,7 +456,7 @@ button {
 }
 
 .footer-col ul li a {
-    color: #aaaaaa;
+    color: #94a3b8;
     font-size: 0.9rem;
     transition: var(--transition);
 }
@@ -501,11 +490,11 @@ button {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
     text-align: center;
-    color: #777;
+    color: #64748b;
     font-size: 0.85rem;
 }
 
-/* --- Cart Drawer --- */
+/* Cart Drawer */
 .cart-drawer {
     position: fixed;
     top: 0;
@@ -561,7 +550,7 @@ button {
     width: 70px;
     height: 70px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 6px;
     background: var(--bg-light);
 }
 
@@ -597,7 +586,7 @@ button {
 
 .remove-item {
     font-size: 0.8rem;
-    color: #ff4d4d;
+    color: #ef4444;
     margin-left: auto;
 }
 
@@ -626,7 +615,6 @@ button {
     margin-top: 3rem;
 }
 
-/* --- Overlay --- */
 .overlay {
     position: fixed;
     top: 0;
@@ -645,7 +633,6 @@ button {
     visibility: visible;
 }
 
-/* --- Responsive Media Queries --- */
 @media(max-width: 992px) {
     .features-bar {
         grid-template-columns: repeat(2, 1fr);
@@ -653,14 +640,11 @@ button {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
 }
 
 @media(max-width: 768px) {
     .nav-links {
-        display: none; /* Can be turned into mobile drawer if needed */
+        display: none;
     }
     #mobile-menu-btn {
         display: block;
@@ -678,5 +662,5 @@ button {
     #newsletter-form {
         flex-direction: column;
     }
-    }
+        }
         
